@@ -10,7 +10,6 @@ const container = (delay) => ({
         opacity: 1,
         transition: { duration: 0.5, delay: delay }
     }
-
 })
 
 function Hero() {
@@ -40,6 +39,18 @@ function Hero() {
                             className='my-2 max-w-xl py-6 font-light tracking-tighter'>
                             {HERO_CONTENT}
                         </motion.p>
+
+                        {/* Resume Button */}
+                        <motion.a
+                            initial="hidden"
+                            animate="visible"
+                            variants={container(1.5)}
+                            href="https://drive.google.com/file/d/1be95wkRk7id6AVKJMd5vJ7rXQ90Gn6SF/view?usp=drivesdk"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-block px-6 py-3 bg-purple-600 text-white font-medium text-lg rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
+                            Resume
+                        </motion.a>
                     </div>
                 </div>
                 <div className='w-full lg:w-1/2 lg:p-8'>
@@ -56,4 +67,4 @@ function Hero() {
     )
 }
 
-export default Hero
+export default Hero;

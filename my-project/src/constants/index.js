@@ -53,25 +53,661 @@ and provided regular reports. Collaborated with teams to ensure
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
-    image: project1,
-    description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+    title: 'SELENIUM With JAVA',
+    description: 'Login Page Automation using Selenium with Java',
+    technologies: ['Java', 'Eclipse', 'Maven'],
+    code: `
+public class Classname {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    @BeforeClass
+    public static void setUpBeforeClass() {
+        // Setup before all tests
+        System.out.println("BeforeClass: Setup before all tests");
+    }
+
+    @Before
+    public void setUp() {
+        // Initialize WebDriver
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
+        // Open the login page
+        driver.get("URL");
+       // driver.manage().window().maximize();
+        System.out.println("BeforeMethod: Successfully Opened the URL Page");
+    }
+
+
+
+@Test
+public void testLoginSuccess() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        WebElement password = driver.findElement(By.id("password"));
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+
+        username.sendKeys("***");
+        password.sendKeys("***");
+        login.click();
+        System.out.println("Test: Testing successful login");
+
+        boolean loginSuccessful = wait.until(ExpectedConditions.urlContains("URL"));
+        Assert.assertTrue("Login was not successful", loginSuccessful);
+
+        // Take screenshot on successful login
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        Path destination = new File("Put Folder Path").toPath();
+        Files.copy(screenshot.toPath(), destination);
+
+        System.out.println("Screenshot saved to " + destination.toString());
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginSuccess: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+@Test
+public void testLoginFailure() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("***");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        System.out.println("Without Username - test passed");
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Error message displayed: " + errorMessageText); 
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+@Test
+public void testLoginFailure2() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("***");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        System.out.println("Without Password - test passed");
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Error message displayed: " + errorMessageText); 
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure2: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+@Test
+public void testLoginFailure3() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("***");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("***");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-notification-notice-message']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Incorrect password - test passed");
+
+        String expectedErrorMessage = "Username or Password Invalid";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure3: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+
+
+@Test
+public void testLoginFailure4() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Without Username and Password - test passed");
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure4: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+        System.out.println("AfterMethod: Teardown after each test");
+    }
+
+    @AfterClass
+    public static void tearDownAfterClass() {
+        System.out.println("AfterClass: Teardown after all tests");
+    }
+}
+
+      `
   },
   {
-    title: "Task Management App",
-    image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+    title: 'SELENIUM With JAVA',
+    description: 'How to open DOM page using Actions',
+    technologies: ['Java', 'Eclipse', 'Maven'],
+    code: `
+public class Classname {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    @BeforeClass
+    public static void setUpBeforeClass() {
+        // Setup before all tests
+        System.out.println("BeforeClass: Setup before all tests");
+    }
+
+    @Before
+    public void setUp() {
+        // Initialize WebDriver
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
+        // Open the login page
+        driver.get("URL");
+       // driver.manage().window().maximize();
+        System.out.println("BeforeMethod: Successfully Opened the URL Page");
+    }
+
+
+
+@Test
+public void testLoginSuccess() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        WebElement password = driver.findElement(By.id("password"));
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+
+        username.sendKeys("***");
+        password.sendKeys("***");
+        login.click();
+        System.out.println("Test: Testing successful login");
+
+        boolean loginSuccessful = wait.until(ExpectedConditions.urlContains("URL"));
+        Assert.assertTrue("Login was not successful", loginSuccessful);
+
+        // Take screenshot on successful login
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        Path destination = new File("Put Folder Path").toPath();
+        Files.copy(screenshot.toPath(), destination);
+
+        System.out.println("Screenshot saved to " + destination.toString());
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginSuccess: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+@Test
+public void testLoginFailure() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("***");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        System.out.println("Without Username - test passed");
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Error message displayed: " + errorMessageText); 
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+@Test
+public void testLoginFailure2() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("***");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        System.out.println("Without Password - test passed");
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Error message displayed: " + errorMessageText); 
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure2: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+@Test
+public void testLoginFailure3() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("***");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("***");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-notification-notice-message']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Incorrect password - test passed");
+
+        String expectedErrorMessage = "Username or Password Invalid";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure3: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+
+
+@Test
+public void testLoginFailure4() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Without Username and Password - test passed");
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure4: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+        System.out.println("AfterMethod: Teardown after each test");
+    }
+
+    @AfterClass
+    public static void tearDownAfterClass() {
+        System.out.println("AfterClass: Teardown after all tests");
+    }
+}
+
+      `
   },
   {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
+    title: 'SELENIUM With JAVA',
+    description: 'Dropdown Automation testing',
+    technologies: ['Java', 'Eclipse', 'Maven'],
+    code: `
+public class Classname {
+
+    private WebDriver driver;
+    private WebDriverWait wait;
+
+    @BeforeClass
+    public static void setUpBeforeClass() {
+        // Setup before all tests
+        System.out.println("BeforeClass: Setup before all tests");
+    }
+
+    @Before
+    public void setUp() {
+        // Initialize WebDriver
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
+        // Open the login page
+        driver.get("URL");
+       // driver.manage().window().maximize();
+        System.out.println("BeforeMethod: Successfully Opened the URL Page");
+    }
+
+
+
+@Test
+public void testLoginSuccess() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        WebElement password = driver.findElement(By.id("password"));
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+
+        username.sendKeys("***");
+        password.sendKeys("***");
+        login.click();
+        System.out.println("Test: Testing successful login");
+
+        boolean loginSuccessful = wait.until(ExpectedConditions.urlContains("URL"));
+        Assert.assertTrue("Login was not successful", loginSuccessful);
+
+        // Take screenshot on successful login
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        Path destination = new File("Put Folder Path").toPath();
+        Files.copy(screenshot.toPath(), destination);
+
+        System.out.println("Screenshot saved to " + destination.toString());
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginSuccess: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+@Test
+public void testLoginFailure() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("***");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        System.out.println("Without Username - test passed");
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Error message displayed: " + errorMessageText); 
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+@Test
+public void testLoginFailure2() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("***");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        System.out.println("Without Password - test passed");
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Error message displayed: " + errorMessageText); 
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure2: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+@Test
+public void testLoginFailure3() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("***");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("***");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-notification-notice-message']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Incorrect password - test passed");
+
+        String expectedErrorMessage = "Username or Password Invalid";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure3: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+
+
+@Test
+public void testLoginFailure4() throws Exception {
+    try {
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+        username.sendKeys("");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("");
+
+        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
+        login.click();
+
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
+        String errorMessageText = errorMessage.getText();
+        System.out.println("Without Username and Password - test passed");
+        
+        String expectedErrorMessage = "Required";
+        
+        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
+
+        // Take screenshot
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destination = new File("Put Folder Path");
+        Files.copy(screenshot.toPath(), destination.toPath());
+
+        System.out.println("Screenshot saved to " + destination.getPath());
+        
+    } catch (Exception e) {
+        System.err.println("Exception in testLoginFailure4: " + e.getMessage());
+        e.printStackTrace();
+        throw e;
+    }
+}
+
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+        System.out.println("AfterMethod: Teardown after each test");
+    }
+
+    @AfterClass
+    public static void tearDownAfterClass() {
+        System.out.println("AfterClass: Teardown after all tests");
+    }
+}
+
+      `
   },
   // {
   //   title: "Blogging Platform",
