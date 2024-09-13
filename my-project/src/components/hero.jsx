@@ -40,17 +40,32 @@ function Hero() {
                             {HERO_CONTENT}
                         </motion.p>
 
-                        {/* Resume Button */}
-                        <motion.a
-                            initial="hidden"
-                            animate="visible"
-                            variants={container(1.5)}
-                            href="https://drive.google.com/file/d/1cRuN8wpY-0SewaMP7lMof0n4ET25KTTi/view?usp=sharing"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-4 inline-block px-6 py-3 bg-purple-600 text-white font-medium text-lg rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
-                            Resume
-                        </motion.a>
+                        {/* Buttons Section */}
+                        <div className="flex space-x-4 mt-4">
+                            {/* Resume Button */}
+                            <motion.a
+                                initial="hidden"
+                                animate="visible"
+                                variants={container(1.5)}
+                                href="https://drive.google.com/file/d/1cRuN8wpY-0SewaMP7lMof0n4ET25KTTi/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block px-4 py-2 bg-purple-600 text-white font-medium text-base rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
+                                Resume
+                            </motion.a>
+
+                            {/* Cover Letter Button with Outline */}
+                            <motion.a
+                                initial="hidden"
+                                animate="visible"
+                                variants={container(1.6)}
+                                href="https://drive.google.com/file/d/1DDxLvaPA244t8A7vp3zj72xCCzH3cg5u/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block px-4 py-2 border-2 border-purple-600 text-purple-600 font-medium text-base rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300">
+                                Cover Letter
+                            </motion.a>
+                        </div>
                     </div>
                 </div>
                 <div className='w-full lg:w-1/2 lg:p-8'>
