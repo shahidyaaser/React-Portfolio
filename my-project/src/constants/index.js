@@ -11,12 +11,14 @@ interactions, address queries, and provide outstanding support. Combines extensi
 knowledge with a deep understanding of business logic, contributing to effective software
 testing and high client satisfaction.`;
 
-export const ABOUT_TEXT = `I am a dedicated and versatile QA Engineer with a strong focus on manual testing, specializing in Salesforce and PMS (OKR/KPI) domains. Skilled in developing detailed test plans, executing test cases, and ensuring software quality using tools 
-like Postman, Selenium IDE, and JIRA. Adept at identifying and resolving defects, collaborating with cross-functional teams, and providing effective client support. Passionate about continuously improving processes, exploring new technologies, and delivering high-quality software solutions.`;
+export const ABOUT_TEXT = `Passionate about ensuring software reliability and user satisfaction through meticulous manual testing, I bring 2.4 years of hands-on experience in the software industry, including expertise in Salesforce and OKR Software. I have honed my skills in functional, regression, and user acceptance testing, as well as in Continuous Integration/Continuous Deployment (CI/CD) practices to streamline testing processes for faster delivery cycles. My expertise also extends to Automated Testing using Selenium IDE and a variety of manual testing methods such as Functional Testing, API Testing, Regression Testing, Sanity Testing, Smoke Testing, End-to-End Testing, White-Box Testing, and Black-Box Testing.`;
+export const ABOUT_TEXT_1 = `-Skilled in designing comprehensive test cases and executing them with precision, I am also experienced in integrating CI/CD pipelines to optimize workflows. My proficiency extends to documenting detailed bug reports to facilitate efficient issue resolution. In addition to domain-specific testing expertise in Salesforce and OKR/KPI Testing, I thrive in fast-paced environments and excel in collaborating with cross-functional teams to deliver high-quality software solutions.`;
+export const ABOUT_TEXT_2 = `-Dedicated to enhancing software quality, I continuously seek opportunities to improve testing processes and explore new technologies.`;
+
 
 export const EXPERIENCES = [
   {
-    year: "2023(Jan) - Currently Working",
+    year: "2023 (Jan) - Currently Working",
     role: "QA Engineer",
     company: "Datalligence.AI",
     description: `As a Manual Tester specializing in product testing, I play a critical role in ensuring the quality,
@@ -25,7 +27,7 @@ I contribute to delivering a reliable and user-friendly product to our clients.`
     technologies: ["Selenium IDE", "Datalligence OKR Software", "Wordpress",]
   },
   {
-    year: "2021(Dec) - 2022(July)",
+    year: "2021 (Dec) - 2022 (July)",
     role: "Associate QA Engineer",
     company: "Merfantz Technology",
     description: `
@@ -52,12 +54,14 @@ and provided regular reports. Collaborated with teams to ensure
 ];
 
 export const PROJECTS = [
-  {
+    {
+        id: 1,
+        extra:"summa",
     title: 'SELENIUM With JAVA',
     description: 'Login Page Automation using Selenium with Java',
     technologies: ['Java', 'Eclipse', 'Maven'],
     code: `
-public class Classname {
+sha class Classname {
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -271,7 +275,9 @@ public void testLoginFailure4() throws Exception {
 
       `
   },
-  {
+    {
+        id: 2,
+        extra:"summa",
     title: 'SELENIUM With JAVA',
     description: 'How to open DOM page using Actions',
     technologies: ['Java', 'Eclipse', 'Maven'],
@@ -490,7 +496,9 @@ public void testLoginFailure4() throws Exception {
 
       `
   },
-  {
+    {
+        id: 3,
+        extra:"summa",
     title: 'SELENIUM With JAVA',
     description: 'Dropdown Automation testing',
     technologies: ['Java', 'Eclipse', 'Maven'],
@@ -708,7 +716,7 @@ public void testLoginFailure4() throws Exception {
 }
 
       `
-  },
+    }
   // {
   //   title: "Blogging Platform",
   //   image: project4,
