@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 function Experiance() {
     return (
-        <div className='border-b border-neutral-900 pb-4'>
+        <div className='border-b border-neutral-900 pb-4 mx-auto'>
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
@@ -19,13 +19,13 @@ function Experiance() {
                                 initial={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 1 }}
                                 className='w-full lg:w-1/2'>
-                                <p className='mb-2 text-sm text-neutral-400'>{experiance?.year}</p>
+                                <p className='mb-2 text-sm text-white pl-60 font-semiboldbold'>{experiance?.year}</p>
                             </motion.div>
                             <motion.div
                                 whileInView={{ opacity: 1, x: 0 }}
                                 initial={{ opacity: 0, x: 100 }}
                                 transition={{ duration: 1 }}
-                                className='w-full max-w-xl lg:w-3/4'>
+                                className='w-full max-w-xl lg:w-3/4 ml-[-130px]'> {/* ml-[-130px] - Extra added by shahid */}
                                 <h6 className='mb-2 font-semibold'>
                                     {experiance?.role} - {" "}
                                     <span className='text-purple-400 text-sm'>{experiance?.company}</span>
