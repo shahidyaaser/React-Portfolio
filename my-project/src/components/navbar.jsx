@@ -1,21 +1,26 @@
-import React from 'react';
-// import logo from "../assets/kevinRushLogo.png";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import React, { useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import { GiHamburgerMenu } from "react-icons/gi";
 
-function Navbar() {
+// import logo from "../assets/kevinRushLogo.png";
+import { motion } from "framer-motion";
+
+function Navbar({ setShow, show }) {
     return (
-        <nav className='mb-20 flex items-center justify-between py-6'>
-{/*             <div className='flex flex-shrink-0 items-center'>
-                <img className='mx-2 w-10' src={logo} alt="Shahid's logo" />
-            </div> */}
-            <div className='m-8 flex justify-center items-center gap-4 text-2xl'>
-                <a href="https://www.linkedin.com/in/shahid-yaaser-6066671b9/" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin />
-                </a>
-                <a href="https://github.com/shahidyaaser" target="_blank" rel="noopener noreferrer">
-                    <FaGithub />
-                </a>
-            </div>
+        <nav className='mb-5 mr-4 flex items-center justify-end pt-6 '>
+            <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 10,
+                    delay: 0.2
+                }}
+                onClick={() => setShow(!show)}
+            >
+                <GiHamburgerMenu className="text-2xl cursor-pointer" />
+            </motion.div>
         </nav>
     );
 }
