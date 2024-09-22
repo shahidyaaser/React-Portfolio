@@ -27,462 +27,73 @@ export const EXPERIENCES = [
 As a Associate QA Engineer, I managed both existing and new projects, ensuring the successful implementation of Salesforce Cloud solutions and custom workflows. I developed and executed comprehensive test cases and scenarios to validate functionality and integration. My responsibilities included conducting API testing for seamless e-commerce data integration with Salesforce, tracking defects in JIRA, and providing regular progress reports. I actively participated in new project sprints and daily scrum meetings, collaborating closely with cross-functional teams to maintain quality standards. I also performed regression testing to ensure the stability and performance of the software during feature updates.`,
         technologies: ["Salesforce", "Jira", "Asana", "Workbench", "Slack", "Wordpress", "Postman"],
     },
-    // {
-    //   year: "2021 - 2022",
-    //   role: "Full Stack Developer",
-    //   company: "Facebook",
-    //   description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    //   technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-    // },
-    // {
-    //   year: "2020 - 2021",
-    //   role: "Software Engineer",
-    //   company: "Paypal",
-    //   description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-    //   technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
-    // },
+
 ];
 
 export const PROJECTS = [
     {
         id: 1,
-        extra: "summa",
-        title: 'SELENIUM With JAVA',
-        description: 'Login Page Automation using Selenium with Java',
-        technologies: ['Java', 'Eclipse', 'Maven'],
+        // extra: "summa",
+        title: 'Salesforce integration for E-commerce Systems',
+        description: 'Salesforce integration for E-commerce Systems',
+        technologies: ['Jira', 'Incadea', 'Postman'],
         code: `
-sha class Classname {
+Project: Salesforce integration for E-commerce Systems
+Company: Merfantz Technology
+Role: Associate QA Engineer
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+Description:
+The Salesforce integration project focused on integrating website data with
+Salesforce to streamline e-commerce operations. It involved managing vehicle
+products, quotes, orders, and appointments. This integration enabled efficient
+tracking of both online and offline sales, ensuring accurate order management.
+Additionally, financial information was synchronized between Salesforce and 
+Incadea, providing comprehensive financial oversight.
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
-        // Setup before all tests
-        System.out.println("BeforeClass: Setup before all tests");
-    }
+Responsibilities:
+Analyzed customer requirements to align testing efforts with business needs.
+Developed detailed test scenarios and test cases to cover all aspects of the
+integration. Identified, documented, and tracked defects in JIRA, ensuring 
+timely resolution. Prepared Test Summary Reports and Daily Summary Reports 
+to communicate testing progress and outcomes. Verified all data conversion
+rules and calculations to maintain data integrity across systems.
 
-    @Before
-    public void setUp() {
-        // Initialize WebDriver
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
-        // Open the login page
-        driver.get("URL");
-       // driver.manage().window().maximize();
-        System.out.println("BeforeMethod: Successfully Opened the URL Page");
-    }
-
-
-
-@Test
-public void testLoginSuccess() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        WebElement password = driver.findElement(By.id("password"));
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-
-        username.sendKeys("***");
-        password.sendKeys("***");
-        login.click();
-        System.out.println("Test: Testing successful login");
-
-        boolean loginSuccessful = wait.until(ExpectedConditions.urlContains("URL"));
-        Assert.assertTrue("Login was not successful", loginSuccessful);
-
-        // Take screenshot on successful login
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        Path destination = new File("Put Folder Path").toPath();
-        Files.copy(screenshot.toPath(), destination);
-
-        System.out.println("Screenshot saved to " + destination.toString());
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginSuccess: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-@Test
-public void testLoginFailure() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("***");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        System.out.println("Without Username - test passed");
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Error message displayed: " + errorMessageText); 
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-@Test
-public void testLoginFailure2() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("***");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        System.out.println("Without Password - test passed");
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Error message displayed: " + errorMessageText); 
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure2: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-@Test
-public void testLoginFailure3() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("***");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("***");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-notification-notice-message']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Incorrect password - test passed");
-
-        String expectedErrorMessage = "Username or Password Invalid";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure3: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-
-
-@Test
-public void testLoginFailure4() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Without Username and Password - test passed");
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure4: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-        System.out.println("AfterMethod: Teardown after each test");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-        System.out.println("AfterClass: Teardown after all tests");
-    }
-}
+Tools Used:
+Test Management: JIRA
+API Testing: Postman
+Financial Integration: Incadea
+Software: Salesforce
 
       `
     },
     {
         id: 2,
-        extra: "summa",
-        title: 'SELENIUM With JAVA',
-        description: 'How to open DOM page using Actions',
-        technologies: ['Java', 'Eclipse', 'Maven'],
+        // extra: "summa",
+        title: 'Salesforce integration for E-commerce Systems',
+        description: 'Salesforce integration for E-commerce Systems',
+        technologies: ['Jira', 'Incadea', 'Postman'],
         code: `
-public class Classname {
+Project: Salesforce integration for E-commerce Systems
+Company: Merfantz Technology
+Role: Associate QA Engineer
+Duration: Jan 2023 - May 2023
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+Description:
+The Salesforce integration project focused on integrating website data with Salesforce to streamline e-commerce operations. It involved managing vehicle products, quotes, orders, and appointments. This integration enabled efficient tracking of both online and offline sales, ensuring accurate order management. Additionally, financial information was synchronized between Salesforce and Incadea, providing comprehensive financial oversight.
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
-        // Setup before all tests
-        System.out.println("BeforeClass: Setup before all tests");
-    }
+Responsibilities:
 
-    @Before
-    public void setUp() {
-        // Initialize WebDriver
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
-        // Open the login page
-        driver.get("URL");
-       // driver.manage().window().maximize();
-        System.out.println("BeforeMethod: Successfully Opened the URL Page");
-    }
+Analyzed customer requirements to align testing efforts with business needs.
+Developed detailed test scenarios and test cases to cover all aspects of the integration.
+Identified, documented, and tracked defects in JIRA, ensuring timely resolution.
+Prepared Test Summary Reports and Daily Summary Reports to communicate testing progress and outcomes.
+Verified all data conversion rules and calculations to maintain data integrity across systems.
+Tools Used:
 
-
-
-@Test
-public void testLoginSuccess() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        WebElement password = driver.findElement(By.id("password"));
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-
-        username.sendKeys("***");
-        password.sendKeys("***");
-        login.click();
-        System.out.println("Test: Testing successful login");
-
-        boolean loginSuccessful = wait.until(ExpectedConditions.urlContains("URL"));
-        Assert.assertTrue("Login was not successful", loginSuccessful);
-
-        // Take screenshot on successful login
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        Path destination = new File("Put Folder Path").toPath();
-        Files.copy(screenshot.toPath(), destination);
-
-        System.out.println("Screenshot saved to " + destination.toString());
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginSuccess: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-@Test
-public void testLoginFailure() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("***");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        System.out.println("Without Username - test passed");
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Error message displayed: " + errorMessageText); 
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-@Test
-public void testLoginFailure2() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("***");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        System.out.println("Without Password - test passed");
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Error message displayed: " + errorMessageText); 
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure2: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-@Test
-public void testLoginFailure3() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("***");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("***");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-notification-notice-message']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Incorrect password - test passed");
-
-        String expectedErrorMessage = "Username or Password Invalid";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure3: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-
-
-@Test
-public void testLoginFailure4() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Without Username and Password - test passed");
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure4: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-        System.out.println("AfterMethod: Teardown after each test");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-        System.out.println("AfterClass: Teardown after all tests");
-    }
-}
+Test Management: JIRA
+API Testing: Postman
+Financial Integration: Incadea
+Software: Salesforce
 
       `
     },
