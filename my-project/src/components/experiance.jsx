@@ -28,11 +28,11 @@ function Experiance() {
                                 className='w-full max-w-xl lg:w-3/4 ml-[-130px]'> {/* ml-[-130px] - Extra added by shahid */}
                                 <h6 className='mb-2 font-semibold'>
                                     {experiance?.role} - {" "}
-                                    <span className='text-purple-400 text-sm'>{experiance?.company}</span>
+                                    <span className='text-purple-400 text-l'>{experiance?.company}</span>
                                 </h6>
-                                <p className='text-neutral-400 mb-4'>{experiance?.description}</p>
+                                <p className='text-neutral-300 mb-4'>{experiance?.description}</p>
                                 {experiance?.technologies?.map((item, index) => (
-                                    <span key={index} className='mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800'>
+                                    <span key={index} className='mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-600'>
                                         {item}
                                     </span>
                                 ))}

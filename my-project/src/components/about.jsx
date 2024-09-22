@@ -29,10 +29,14 @@ function About() {
                     className='w-full lg:w-1/2'
                 >
                     <div className='flex flex-col justify-center lg:justify-start'>
-                        <p className=' max-w-xl'>{ABOUT_TEXT}</p>
-                        <p className=' max-w-xl '>{ABOUT_TEXT_1}</p>
-                        <p className='my-1 max-w-xl'>{ABOUT_TEXT_2}</p>
-
+                        <p className='max-w-xl'>{ABOUT_TEXT}</p>
+                        <p className='mt-4 max-w-xl'>{ABOUT_TEXT_1}</p>
+                        <p className='mt-4 my-1 max-w-xl'>{ABOUT_TEXT_2}</p>
+                        <p className='mt-4 my-1 max-w-xl'>
+                            <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent mt-10'>"The best among you are those who have the best manners and character.”</span> {/* Bold and larger font */}
+                            <br />
+                            <span className='text-lg pl-80'>- Prophet Muhammad <span className='font-bold'>ﷺ</span></span> {/* Added Arabic text for peace be upon him */}
+                        </p>
                     </div>
                 </motion.div>
             </div>

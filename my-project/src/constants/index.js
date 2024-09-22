@@ -4,63 +4,53 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = `Experienced with 2.4 years of focused expertise in manual testing, specializing in Salesforce
-and PMS (OKR/KPI) domains. Proficient in developing detailed test cases and strategic test
-plans to ensure software quality and reliability. Demonstrated ability to manage client
-interactions, address queries, and provide outstanding support. Combines extensive product
-knowledge with a deep understanding of business logic, contributing to effective software
-testing and high client satisfaction.`;
+export const HERO_CONTENT = `Experienced with 2.4 years of expertise in ensuring software quality across Salesforce and PMS (OKR/KPI) domains. Adept at developing comprehensive test strategies and detailed test cases that align with business requirements, ensuring software reliability and performance. Known for blending deep product knowledge with a strong grasp of business logic to deliver high quality results and enhance client satisfaction.`;
 
-export const ABOUT_TEXT = `Passionate about ensuring software reliability and user satisfaction through meticulous manual testing, I bring 2.4 years of hands-on experience in the software industry, including expertise in Salesforce and OKR Software. I have honed my skills in functional, regression, and user acceptance testing, as well as in Continuous Integration/Continuous Deployment (CI/CD) practices to streamline testing processes for faster delivery cycles. My expertise also extends to Automated Testing using Selenium IDE and a variety of manual testing methods such as Functional Testing, API Testing, Regression Testing, Sanity Testing, Smoke Testing, End-to-End Testing, White-Box Testing, and Black-Box Testing.`;
-export const ABOUT_TEXT_1 = `-Skilled in designing comprehensive test cases and executing them with precision, I am also experienced in integrating CI/CD pipelines to optimize workflows. My proficiency extends to documenting detailed bug reports to facilitate efficient issue resolution. In addition to domain-specific testing expertise in Salesforce and OKR/KPI Testing, I thrive in fast-paced environments and excel in collaborating with cross-functional teams to deliver high-quality software solutions.`;
-export const ABOUT_TEXT_2 = `-Dedicated to enhancing software quality, I continuously seek opportunities to improve testing processes and explore new technologies.`;
+export const ABOUT_TEXT = `I am a dedicated QA Engineer with 2.4 years of experience, driven by a passion for learning and adapting to new technologies. My career goal is to continuously upskill by exploring new products, features, and AI advancements, ensuring I stay at the forefront of the industry.`;
+export const ABOUT_TEXT_1 = `-I excel in quickly understanding complex business logic, solving problems efficiently, and collaborating effectively within teams. I take pride in my ability to independently manage product testing, ensuring quality and performance as a single point of responsibility.`;
+export const ABOUT_TEXT_2 = `-Beyond my professional life, I am an avid sports enthusiast and a passionate cricket player. Whether it's on the field or in my career, I always bring a spirit of teamwork, resilience, and enthusiasm to everything I do. `;
 
 
 export const EXPERIENCES = [
-  {
-    year: "2023 (Jan) - Currently Working",
-    role: "QA Engineer",
-    company: "Datalligence.AI",
-    description: `As a Manual Tester specializing in product testing, I play a critical role in ensuring the quality,
-functionality, and usability of our OKR software. Through thorough testing and meticulous analysis,
-I contribute to delivering a reliable and user-friendly product to our clients.`,
-    technologies: ["Selenium IDE", "Datalligence OKR Software", "Wordpress",]
-  },
-  {
-    year: "2021 (Dec) - 2022 (July)",
-    role: "Associate QA Engineer",
-    company: "Merfantz Technology",
-    description: `
-As a QA Engineer, I ensured the successful implementation of Salesforce Cloud and custom workflows by developing test cases and 
-executing test scenarios. I conducted API testing for seamless e-commerce data integration with Salesforce, tracked defects in JIRA, 
-and provided regular reports. Collaborated with teams to ensure
- quality and performed regression testing to maintain functionality during feature updates.`,
-    technologies: ["Salesforce", "Jira", "Asana", "Workbench", "Slack", "Wordpress"],
-  },
-  // {
-  //   year: "2021 - 2022",
-  //   role: "Full Stack Developer",
-  //   company: "Facebook",
-  //   description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-  //   technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  // },
-  // {
-  //   year: "2020 - 2021",
-  //   role: "Software Engineer",
-  //   company: "Paypal",
-  //   description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-  //   technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
-  // },
+    {
+        year: "2023 (Jan) - Currently Working",
+        role: "QA Engineer",
+        company: "Datalligence.AI",
+        description: `As a QA Engineer, I take full responsibility for testing the entire OKR software, ensuring its quality, functionality, and usability. I manage the complete testing lifecycle, from identifying issues to verifying resolutions, and collaborate closely with the development team to deliver a seamless and user-friendly product. Additionally, I play a pivotal role in managing customer success, ensuring our clients have a positive experience with the software and addressing any concerns with efficiency and expertise.`,
+        technologies: ["Selenium IDE", "Datalligence Software", "Wordpress", "Zoho Bug Tracker"]
+    },
+    {
+        year: "2021 (Dec) - 2022 (July)",
+        role: "Associate QA Engineer",
+        company: "Merfantz Technology",
+        description: `
+As a Associate QA Engineer, I managed both existing and new projects, ensuring the successful implementation of Salesforce Cloud solutions and custom workflows. I developed and executed comprehensive test cases and scenarios to validate functionality and integration. My responsibilities included conducting API testing for seamless e-commerce data integration with Salesforce, tracking defects in JIRA, and providing regular progress reports. I actively participated in new project sprints and daily scrum meetings, collaborating closely with cross-functional teams to maintain quality standards. I also performed regression testing to ensure the stability and performance of the software during feature updates.`,
+        technologies: ["Salesforce", "Jira", "Asana", "Workbench", "Slack", "Wordpress", "Postman"],
+    },
+    // {
+    //   year: "2021 - 2022",
+    //   role: "Full Stack Developer",
+    //   company: "Facebook",
+    //   description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
+    //   technologies: ["Python", "Svelte", "Three.js", "Postgres"],
+    // },
+    // {
+    //   year: "2020 - 2021",
+    //   role: "Software Engineer",
+    //   company: "Paypal",
+    //   description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
+    //   technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+    // },
 ];
 
 export const PROJECTS = [
     {
         id: 1,
-        extra:"summa",
-    title: 'SELENIUM With JAVA',
-    description: 'Login Page Automation using Selenium with Java',
-    technologies: ['Java', 'Eclipse', 'Maven'],
-    code: `
+        extra: "summa",
+        title: 'SELENIUM With JAVA',
+        description: 'Login Page Automation using Selenium with Java',
+        technologies: ['Java', 'Eclipse', 'Maven'],
+        code: `
 sha class Classname {
 
     private WebDriver driver;
@@ -274,14 +264,14 @@ public void testLoginFailure4() throws Exception {
 }
 
       `
-  },
+    },
     {
         id: 2,
-        extra:"summa",
-    title: 'SELENIUM With JAVA',
-    description: 'How to open DOM page using Actions',
-    technologies: ['Java', 'Eclipse', 'Maven'],
-    code: `
+        extra: "summa",
+        title: 'SELENIUM With JAVA',
+        description: 'How to open DOM page using Actions',
+        technologies: ['Java', 'Eclipse', 'Maven'],
+        code: `
 public class Classname {
 
     private WebDriver driver;
@@ -495,14 +485,14 @@ public void testLoginFailure4() throws Exception {
 }
 
       `
-  },
+    },
     {
         id: 3,
-        extra:"summa",
-    title: 'SELENIUM With JAVA',
-    description: 'Dropdown Automation testing',
-    technologies: ['Java', 'Eclipse', 'Maven'],
-    code: `
+        extra: "summa",
+        title: 'SELENIUM With JAVA',
+        description: 'Dropdown Automation testing',
+        technologies: ['Java', 'Eclipse', 'Maven'],
+        code: `
 public class Classname {
 
     private WebDriver driver;
@@ -717,17 +707,17 @@ public void testLoginFailure4() throws Exception {
 
       `
     }
-  // {
-  //   title: "Blogging Platform",
-  //   image: project4,
-  //   description:
-  //     "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-  //   technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
-  // },
+    // {
+    //   title: "Blogging Platform",
+    //   image: project4,
+    //   description:
+    //     "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
+    //   technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+    // },
 ];
 
 export const CONTACT = {
-  FaLinkedin: "https://github.com/shahidyaaser",
-  phoneNo: "+91 8610397797",
-  email: "shahidyaaser18@gmail.com",
+    FaLinkedin: "https://github.com/shahidyaaser",
+    phoneNo: "+91 8610397797",
+    email: "shahidyaaser18@gmail.com",
 };
