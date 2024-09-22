@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
 
-// import logo from "../assets/kevinRushLogo.png";
+
 import { motion } from "framer-motion";
 
 function Navbar({ setShow, show }) {

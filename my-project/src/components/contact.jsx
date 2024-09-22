@@ -19,10 +19,10 @@ function Contact() {
                     initial={{ opacity: 0, x: -100 }}
                     transition={{ duration: 1 }}
                     className='my-4 flex justify-center space-x-4'>
-                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/shahid-yaaser-6066671b9/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin size={30} />
                     </a>
-                    <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/shahidyaaser" target="_blank" rel="noopener noreferrer">
                         <FaGithub size={30} />
                     </a>
                 </motion.div>
