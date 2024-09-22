@@ -31,11 +31,57 @@ As a Associate QA Engineer, I managed both existing and new projects, ensuring t
 ];
 
 export const PROJECTS = [
+
     {
         id: 1,
         // extra: "summa",
-        title: 'Salesforce integration for E-commerce Systems',
-        description: 'Salesforce integration for E-commerce Systems',
+        title: 'Product Testing',
+        description: 'Datalligence OKR software testing',
+        technologies: ['Datalligence', 'Selenium IDE', 'WordPress'],
+        code: `
+Project: Datalligence OKR Testing
+Company: Datalligence
+Role: QA Engineer
+
+Description:
+As the sole QA Engineer for Datalligence’s OKR software, I am responsible for 
+ensuring the product's quality, functionality, and usability. Through rigorous 
+testing and detailed analysis, I help deliver a robust and user-friendly product 
+to our clients. Utilizing Selenium IDE, I perform quick and efficient validations 
+of critical functionalities, enhancing the testing process. In addition to testing, 
+I manage customer success, providing support and conducting product walkthroughs to 
+ensure client satisfaction and effective use of the software.
+
+Responsibilities:
+
+Developed and executed comprehensive test plans and test cases to validate the 
+performance and functionality of the OKR software.Identified, documented, and 
+tracked software defects using Zoho bug tools, maintaining accurate records and 
+detailed descriptions of issues encountered during testing. Collaborated with 
+cross-functional teams, including developers and product managers, to understand 
+requirements and user scenarios for effective test planning and execution.Conducted 
+manual exploratory testing to identify potential issues and usability concerns, 
+improving overall user experience. Performed regression testing to verify that new 
+features and enhancements did not impact existing functionality. Participated in 
+requirement analysis and review sessions, providing valuable feedback from a QA 
+perspective to improve product quality. Acted as a Customer Support Specialist, 
+managing client relations by resolving queries, conducting weekly catch-ups, and 
+providing detailed product walkthroughs.Proactively addressed client inquiries and 
+feedback through various communication channels, ensuring high levels of customer 
+satisfaction and facilitating feature enhancements based on user input.
+
+Tools Used:
+Test Management: Zoho Bug Tools, Excel
+Automation Testing: Selenium IDE
+Software: Datalligence OKR/KPI
+
+      `
+    },
+    {
+        id: 2,
+        // extra: "summa",
+        title: 'Salesforce Integration',
+        description: 'Salesforce Integration for E-commerce Systems',
         technologies: ['Jira', 'Incadea', 'Postman'],
         code: `
 Project: Salesforce integration for E-commerce Systems
@@ -62,269 +108,48 @@ Tools Used:
 Test Management: JIRA
 API Testing: Postman
 Financial Integration: Incadea
-Software: Salesforce
+Platform: Salesforce, Magento
 
       `
     },
+
     {
-        id: 2,
+        id: 3,
         // extra: "summa",
-        title: 'Salesforce integration for E-commerce Systems',
-        description: 'Salesforce integration for E-commerce Systems',
-        technologies: ['Jira', 'Incadea', 'Postman'],
+        title: 'Salesforce Testing',
+        description: 'Salesforce Platform Testing for Business Requirements',
+        technologies: ['Asana', 'Slack', 'Salesforce'],
         code: `
-Project: Salesforce integration for E-commerce Systems
+Project: Salesforce Testing
 Company: Merfantz Technology
 Role: Associate QA Engineer
-Duration: Jan 2023 - May 2023
 
 Description:
-The Salesforce integration project focused on integrating website data with Salesforce to streamline e-commerce operations. It involved managing vehicle products, quotes, orders, and appointments. This integration enabled efficient tracking of both online and offline sales, ensuring accurate order management. Additionally, financial information was synchronized between Salesforce and Incadea, providing comprehensive financial oversight.
+This project focused on testing the Salesforce platform to ensure it met the
+specified business requirements and developments. The objective was to validate 
+both Salesforce Classic and Lightning interfaces, ensuring their functionality 
+and usability. I collaborated with the development team to address necessary 
+changes and enhancements tailored to the client's business needs. Data validation 
+and manipulation were carried out using Workbench and the Salesforce Developer 
+Console.
 
 Responsibilities:
 
-Analyzed customer requirements to align testing efforts with business needs.
-Developed detailed test scenarios and test cases to cover all aspects of the integration.
-Identified, documented, and tracked defects in JIRA, ensuring timely resolution.
-Prepared Test Summary Reports and Daily Summary Reports to communicate testing progress and outcomes.
-Verified all data conversion rules and calculations to maintain data integrity across systems.
+Tested Salesforce platform developments based on the given business requirements.
+Conducted thorough testing on both Salesforce Classic and Lightning interfaces to 
+ensure seamless functionality. Reported and tracked bugs using Asana, ensuring 
+timely communication and resolution. Documented test cases and bugs in Excel for 
+detailed tracking and reporting. Queried and validated data using Workbench and 
+the Salesforce Developer Console.
+
 Tools Used:
-
-Test Management: JIRA
-API Testing: Postman
-Financial Integration: Incadea
-Software: Salesforce
-
-      `
-    },
-    {
-        id: 3,
-        extra: "summa",
-        title: 'SELENIUM With JAVA',
-        description: 'Dropdown Automation testing',
-        technologies: ['Java', 'Eclipse', 'Maven'],
-        code: `
-public class Classname {
-
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    @BeforeClass
-    public static void setUpBeforeClass() {
-        // Setup before all tests
-        System.out.println("BeforeClass: Setup before all tests");
-    }
-
-    @Before
-    public void setUp() {
-        // Initialize WebDriver
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Initialize WebDriverWait with a timeout of 10 seconds
-        // Open the login page
-        driver.get("URL");
-       // driver.manage().window().maximize();
-        System.out.println("BeforeMethod: Successfully Opened the URL Page");
-    }
-
-
-
-@Test
-public void testLoginSuccess() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        WebElement password = driver.findElement(By.id("password"));
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-
-        username.sendKeys("***");
-        password.sendKeys("***");
-        login.click();
-        System.out.println("Test: Testing successful login");
-
-        boolean loginSuccessful = wait.until(ExpectedConditions.urlContains("URL"));
-        Assert.assertTrue("Login was not successful", loginSuccessful);
-
-        // Take screenshot on successful login
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        Path destination = new File("Put Folder Path").toPath();
-        Files.copy(screenshot.toPath(), destination);
-
-        System.out.println("Screenshot saved to " + destination.toString());
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginSuccess: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-@Test
-public void testLoginFailure() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("***");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        System.out.println("Without Username - test passed");
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Error message displayed: " + errorMessageText); 
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-@Test
-public void testLoginFailure2() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("***");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        System.out.println("Without Password - test passed");
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Error message displayed: " + errorMessageText); 
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure2: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-@Test
-public void testLoginFailure3() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("***");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("***");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-notification-notice-message']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Incorrect password - test passed");
-
-        String expectedErrorMessage = "Username or Password Invalid";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure3: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-
-
-@Test
-public void testLoginFailure4() throws Exception {
-    try {
-        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
-        username.sendKeys("");
-
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("");
-
-        WebElement login = driver.findElement(By.xpath("//button[@type='submit']"));
-        login.click();
-
-        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-form-item-explain-error']")));
-        String errorMessageText = errorMessage.getText();
-        System.out.println("Without Username and Password - test passed");
-        
-        String expectedErrorMessage = "Required";
-        
-        Assert.assertEquals("Error message does not match the expected value.", expectedErrorMessage, errorMessageText);
-
-        // Take screenshot
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destination = new File("Put Folder Path");
-        Files.copy(screenshot.toPath(), destination.toPath());
-
-        System.out.println("Screenshot saved to " + destination.getPath());
-        
-    } catch (Exception e) {
-        System.err.println("Exception in testLoginFailure4: " + e.getMessage());
-        e.printStackTrace();
-        throw e;
-    }
-}
-
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-        System.out.println("AfterMethod: Teardown after each test");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-        System.out.println("AfterClass: Teardown after all tests");
-    }
-}
+Test Management: Asana, Excel
+Communication: Slack
+Platform: Salesforce (Classic and Lightning)
+Data Querying: Workbench, Developer Console
 
       `
     }
-    // {
-    //   title: "Blogging Platform",
-    //   image: project4,
-    //   description:
-    //     "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    //   technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
-    // },
 ];
 
 export const CONTACT = {
