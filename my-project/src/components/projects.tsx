@@ -7,9 +7,11 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-      <div className="bg-black text-white rounded-lg p-8 max-w-3xl w-full max-h-[90vh] overflow-auto">
+      <div className="bg-black text-white rounded-lg p-8 max-w-4xl w-[95vw] max-h-[90vh] overflow-auto">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text tracking-tight text-transparent mt-10">{project.title}</h2>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text tracking-tight text-transparent mt-10">
+            {project.title}
+          </h2>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
             <RxCross2 size={24} />
           </button>
@@ -23,7 +25,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
           ))}
         </ul>
         <h3 className="text-lg font-semibold mb-2">Deepview:</h3>
-        <pre className="bg-black text-white p-4 rounded-lg overflow-x-auto">
+        <pre className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 text-white p-4 rounded-lg overflow-x-auto text-base leading-7 font-light font-mono shadow-lg">
           <p>{project.code}</p>
         </pre>
       </div>
@@ -33,8 +35,8 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
 
 const ProjectCard = ({ project, onOpen }) => {
   return (
-    <div className="bg-gray-800 w-[400px] h-[300px] flex flex-col items-center justify-center duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 p-8 rounded-lg mix-blend-luminosity transition-all">
-      <h3 className="uppercase text-xl font-bold text-center">{project.title}</h3>
+    <div className="bg-gray-800 w-[600px] h-auto flex flex-col items-center justify-center duration-500 group-hover:blur-sm hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 p-8 rounded-lg mix-blend-luminosity transition-all">
+      <h3 className="uppercase text-2xl font-bold text-center">{project.title}</h3>
       <p className="text-sm leading-7 my-3 font-light opacity-50 text-center">{project.description}</p>
       <div className='flex flex-col items-center justify-center'>
         <div className="flex flex-wrap gap-2 mb-4 justify-center">
@@ -67,8 +69,8 @@ const Projects = () => {
 
   return (
     <div className="py-4">
-      <h2 className="my-20 text-center text-4xl">Projects</h2>
-      <div className="flex justify-center max-w-5xl mx-auto gap-8 group">
+      <h2 className="my-20 text-center text-4xl font-bold">Projects</h2>
+      <div className="flex justify-center max-w-7xl mx-auto gap-8 group">
         {PROJECTS?.map((project) => (
           <ProjectCard
             key={project.title}

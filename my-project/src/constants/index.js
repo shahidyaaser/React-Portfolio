@@ -44,7 +44,7 @@ Company: Datalligence
 Role: QA Engineer
 
 Description:
-As the sole QA Engineer for Datalligence’s OKR software, I am responsible for 
+As the sole QA Engineer for Datalligence OKR software, I am responsible for 
 ensuring the product's quality, functionality, and usability. Through rigorous 
 testing and detailed analysis, I help deliver a robust and user-friendly product 
 to our clients. Utilizing Selenium IDE, I perform quick and efficient validations 
@@ -54,21 +54,24 @@ ensure client satisfaction and effective use of the software.
 
 Responsibilities:
 
-Developed and executed comprehensive test plans and test cases to validate the 
+-Developed and executed comprehensive test plans and test cases to validate the 
 performance and functionality of the OKR software.Identified, documented, and 
 tracked software defects using Zoho bug tools, maintaining accurate records and 
 detailed descriptions of issues encountered during testing. Collaborated with 
 cross-functional teams, including developers and product managers, to understand 
 requirements and user scenarios for effective test planning and execution.Conducted 
 manual exploratory testing to identify potential issues and usability concerns, 
-improving overall user experience. Performed regression testing to verify that new 
-features and enhancements did not impact existing functionality. Participated in 
-requirement analysis and review sessions, providing valuable feedback from a QA 
-perspective to improve product quality. Acted as a Customer Support Specialist, 
-managing client relations by resolving queries, conducting weekly catch-ups, and 
-providing detailed product walkthroughs.Proactively addressed client inquiries and 
-feedback through various communication channels, ensuring high levels of customer 
-satisfaction and facilitating feature enhancements based on user input.
+improving overall user experience.
+
+-Performed regression testing to verify that new features and enhancements 
+did not impact existing functionality. Participated in requirement analysis
+and review sessions, providing valuable feedback from a QA perspective to 
+improve product quality. Acted as a Customer Support Specialist, managing 
+client relations by resolving queries, conducting weekly catch-ups, and 
+providing detailed product walkthroughs.Proactively addressed client inquiries
+and feedback through various communication channels, ensuring high levels 
+of customer satisfaction and facilitating feature enhancements based on user
+input.
 
 Tools Used:
 Test Management: Zoho Bug Tools, Excel
