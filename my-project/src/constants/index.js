@@ -25,7 +25,7 @@ export const EXPERIENCES = [
         company: "Merfantz Technology",
         description: `
 As a Associate QA Engineer, I managed both existing and new projects, ensuring the successful implementation of Salesforce Cloud solutions and custom workflows. I developed and executed comprehensive test cases and scenarios to validate functionality and integration. My responsibilities included conducting API testing for seamless e-commerce data integration with Salesforce, tracking defects in JIRA, and providing regular progress reports. I actively participated in new project sprints and daily scrum meetings, collaborating closely with cross-functional teams to maintain quality standards. I also performed regression testing to ensure the stability and performance of the software during feature updates.`,
-        technologies: ["Salesforce", "Jira", "Asana", "Workbench", "Slack", "Wordpress", "Postman"],
+        technologies: ["Salesforce", "Jira", "Asana", "Workbench", "Postman"],
     },
 
 ];
