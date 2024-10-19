@@ -4,6 +4,7 @@ import { SiSelenium } from "react-icons/si";
 import { FaWordpress } from "react-icons/fa";
 import { FaSalesforce } from "react-icons/fa";
 import { SiPostman } from "react-icons/si";
+import { FaDev } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const iconContainer = (duration) => ({
@@ -67,6 +68,14 @@ function Skills() {
                     animate="animate"
                     className='rounded-2xl border-4 border-neutral-800 p-4'>
                     <SiPostman className='text-7xl text-orange-500' />
+                </motion.div>
+            </motion.div>
+            <motion.div
+                    variants={iconContainer(3.5)} // Adjust duration as needed
+                    initial="initial"
+                    animate="animate"
+                    className='rounded-2xl border-4 border-neutral-800 p-4'>
+                    <FaDev className='text-7xl text-purple-500' /> {/* Change this line to use the correct Devassure icon */}
                 </motion.div>
             </motion.div>
         </div>
