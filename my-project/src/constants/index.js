@@ -4,9 +4,9 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = `Experienced with 2.4 years of expertise in ensuring software quality across Salesforce and PMS (OKR/KPI) domains. Adept at developing comprehensive test strategies and detailed test cases that align with business requirements, ensuring software reliability and performance. Known for blending deep product knowledge with a strong grasp of business logic to deliver high quality results and enhance client satisfaction.`;
+export const HERO_CONTENT = `Experienced with 2.7 years of expertise in ensuring software quality across Salesforce and PMS (OKR/KPI) domains. Adept at developing comprehensive test strategies and detailed test cases that align with business requirements, ensuring software reliability and performance. Known for blending deep product knowledge with a strong grasp of business logic to deliver high quality results and enhance client satisfaction.`;
 
-export const ABOUT_TEXT = `I am a dedicated QA Engineer with 2.4 years of experience, driven by a passion for learning and adapting to new technologies. My career goal is to continuously upskill by exploring new products, features, and AI advancements, ensuring I stay at the forefront of the industry.`;
+export const ABOUT_TEXT = `I am a dedicated QA Engineer with 2.7 years of experience, driven by a passion for learning and adapting to new technologies. My career goal is to continuously upskill by exploring new products, features, and AI advancements, ensuring I stay at the forefront of the industry.`;
 export const ABOUT_TEXT_1 = `-I excel in quickly understanding complex business logic, solving problems efficiently, and collaborating effectively within teams. I take pride in my ability to independently manage product testing, ensuring quality and performance as a single point of responsibility.`;
 export const ABOUT_TEXT_2 = `-Beyond my professional life, I am an avid sports enthusiast and a passionate cricket player. Whether it's on the field or in my career, I always bring a spirit of teamwork, resilience, and enthusiasm to everything I do. `;
 
@@ -37,7 +37,7 @@ export const PROJECTS = [
         // extra: "summa",
         title: 'Product Testing',
         description: 'Datalligence OKR software testing',
-        technologies: ['Datalligence', 'Selenium IDE', 'WordPress'],
+        technologies: ['Datalligence', 'Selenium IDE','DevAssure'],
         code: `
 Project: Datalligence OKR Testing
 Company: Datalligence
