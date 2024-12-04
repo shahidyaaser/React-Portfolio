@@ -63,7 +63,7 @@ function Hero() {
                                     initial="hidden"
                                     animate="visible"
                                     variants={container(1.5)}
-                                    href="https://drive.google.com/file/d/13EXDLLAETwb6GqY8jDLXWPnZk1G4ApJL/view?usp=drivesdk"
+                                    href="https://drive.google.com/file/d/1u6CyxP5A_XbY239aHuL1H1_jsp5fzCBR/view?usp=drive_link"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block px-4 py-2 bg-purple-600 text-white font-medium text-base rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
@@ -75,7 +75,7 @@ function Hero() {
                                     initial="hidden"
                                     animate="visible"
                                     variants={container(1.6)}
-                                    href="https://drive.google.com/file/d/1z1qsaXYyoZqQyWlboJPQT_QvZgo2F5Ub/view?usp=sharing"
+                                    href="https://drive.google.com/file/d/1hzKFEonfhNgc4hOMdWL30JROFlBRg_gG/view?usp=drive_link"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block px-4 py-2 border-2 border-purple-600 text-purple-600 font-medium text-base rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300">
