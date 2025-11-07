@@ -14,7 +14,7 @@ const container = (delay) => ({
 })
 
 
-function Hero() {
+function Hero.() {
     const [show, setShow] = useState(false);
     return (
         <>
