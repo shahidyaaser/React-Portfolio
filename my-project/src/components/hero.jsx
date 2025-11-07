@@ -14,7 +14,7 @@ const container = (delay) => ({
 })
 
 
-function Hero.() {
+function Hero() {
     const [show, setShow] = useState(false);
     return (
         <>
@@ -75,7 +75,7 @@ function Hero.() {
                                     initial="hidden"
                                     animate="visible"
                                     variants={container(1.6)}
-                                    href="https://drive.google.com/file/d/1hzKFEonfhNgc4hOMdWL30JROFlBRg_gG/view?usp=drive_link"
+                                    href="https://drive.google.com/file/d/1hzKFEonfhNgc4hOkMdWL30JROFlBRg_gG/view?usp=drive_link"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block px-4 py-2 border-2 border-purple-600 text-purple-600 font-medium text-base rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300">
